@@ -5,21 +5,25 @@ package com.mycompany.ojedavalessistemabiblioteca;
  * @author leojeda
  */
 public class Libro {
-    String nombre;
-    String autor;
-    String url; // url al libro (opcional)
-    long isbn; // identificador único de un libro (opcional)
+    private String titulo;
+    private String autor;
+    private int id; // la forma de identificar al libro
 
-    public Libro(String nombre, String autor, String url, long isbn) {
-        this.nombre = nombre;
+    public Libro(int id, String titulo, String autor) {
+        this.id = id;
+        this.titulo = titulo;
         this.autor = autor;
-        this.url = url;
-        this.isbn = isbn;
-    }
-
-    public Libro(String nombre, String autor) {
-        this(nombre,autor,"example.com",0000000000000); //cuando no nos dan la url o el isbn
     }
     
+    public int getId() {
+        return id; }
+    public String getTitulo() {
+        return titulo; }
+    public String getAutor() { 
+        return autor; }
     
+    @Override
+    public String toString() {
+        return "[" + id + "] " + titulo + " - " + autor;
+    }
 }
